@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 
 
-export const FirstApp = ({title,subTitle}) => {
+export const FirstApp = ({
+    title,
+    subTitle =  "la tierra explota"
+}) => {
 
 
 
@@ -17,6 +20,12 @@ export const FirstApp = ({title,subTitle}) => {
 }
 
 FirstApp.propTypes = {
-title:PropTypes.string.isRequired,
-subTitle:PropTypes.number.isRequired
+title:PropTypes.string,
+subTitle:PropTypes.string //si ponenemos .requaried entonces no podemos usar default si o si tenemso que darle valor
+}
+
+
+FirstApp.defaultProps = {
+    title:"no hay titulo",
+    subTitle:"no hay substitulo"
 }
